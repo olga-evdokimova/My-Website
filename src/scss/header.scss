@@ -101,18 +101,18 @@
 		padding: rem(80) 10% 0 rem(67);
 		width: 41%;
 		margin-left: auto;
-		  li {
-            @for $var from 1 to 8 {
-                $delay: $var * 0.3;
-                &:nth-child(#{$var}) {
-                    @if $var==1 {
-                        transition: opacity 1.8s ease 0.5s, transform 1.8s ease 0.5s;
-                    } @else {
-                        transition: opacity 1.8s ease 0.5s, transform 1.8s ease #{$delay + s};
-                    }
-                }
-            }
-        }
+		//   li {
+        //     @for $var from 1 to 8 {
+        //         $delay: $var * 0.3;
+        //         &:nth-child(#{$var}) {
+        //             @if $var==1 {
+        //                 transition: opacity 1.8s ease 0.5s, transform 1.8s ease 0.5s;
+        //             } @else {
+        //                 transition: opacity 1.8s ease 0.5s, transform 1.8s ease #{$delay + s};
+        //             }
+        //         }
+        //     }
+        // }
 	}
 	&__item {
 		padding-bottom: rem(30);

@@ -1,0 +1,40 @@
+//====================================================================================================
+.first {
+    &__text {
+        font-size: rem(25);
+        font-weight: normal;
+    }
+    &__buttons {
+        font-weight: 600;
+        font-size: rem(29);
+    }
+}
+.title {
+    font-size: rem(70);
+    font-weight: bold;
+}
+.button-decor {
+}
+.button-g{
+    display: inline-flex;
+    position: relative;
+    background: $gradient-menu;
+    padding: 3px;
+    border-radius: 10px;
+}
+
+
+.button-b-01 {
+    background: #0b0b45;
+    color: white;
+    padding:rem(22) rem(62);
+    border-radius: 10px;
+}
+.button-b-02{
+     background: #0b0b45;
+    color: white;
+    padding:rem(15) rem(15);
+    border-radius: 10px; 
+   
+}
+//====================================================================================================
