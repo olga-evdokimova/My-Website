@@ -221,9 +221,6 @@ body {
       touch-action: none;
 }
 
-.no-webp .wrapper{
-  background-image: url(../img/Bacground.png); }
-
 .wrapper {
   background-repeat: no-repeat;
   background-size: cover;
@@ -612,5 +609,3 @@ body {
   padding: 0.9375rem 0.9375rem;
   border-radius: 10px;
 }
-
-.webp .wrapper{ background-image: url(../img/Bacground.webp); }
