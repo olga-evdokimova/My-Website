@@ -4,6 +4,7 @@ import gulp from "gulp";
 import { plugins } from "./config/gulp-plugins.js";
 // Импорт путей
 import { path } from "./config/gulp-settings.js";
+import ghPages from 'gulp-gh-pages';
 
 // Передаем значения в глобальную переменную
 global.app = {
@@ -62,7 +63,13 @@ export { deployZIP }
 // Выполнение сценария по умолчанию
 gulp.task('default', development);
 
+gulp.task('deploy', function () {
 
+	return gulp.src('./dist/**/*')
+
+		.pipe(ghPages());
+
+});
 
 
 
