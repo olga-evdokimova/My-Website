@@ -46,6 +46,13 @@
 		padding-right: rem(50);
 		a {
 			font-size: rem(40);
+			transition: background 0.8s ease 0s;
+			&:hover {
+				&::before {
+					@extend %gradient-text;
+					transition: background 0.8s ease 0s;
+				}
+			}
 		}
 	}
 }
@@ -62,16 +69,16 @@
 		top: 0;
 		overflow: auto;
 		//background: $gradient1;
-		 background: linear-gradient(to right, #0b0b4530 62%, #0b0b45 38%);
+		background: linear-gradient(to right, #0b0b4530 58%, #0b0b45 41%);
 		z-index: 4;
-		
+
 		.menu-open & {
 			right: 0;
 			transition: right 0.5s ease 0s;
 		}
 		& .logo {
 			padding: rem(75) 0 0 rem(30);
-			width: 38%;
+			width: 41%;
 			margin-left: auto;
 			&__img {
 				width: rem(60);
@@ -91,18 +98,39 @@
 	&__list {
 		font-size: rem(42);
 		font-weight: bold;
-		padding: rem(80) 0 0 rem(67);
-		width: 38%;
+		padding: rem(80) 10% 0 rem(67);
+		width: 41%;
 		margin-left: auto;
+		  li {
+            @for $var from 1 to 8 {
+                $delay: $var * 0.3;
+                &:nth-child(#{$var}) {
+                    @if $var==1 {
+                        transition: opacity 1.8s ease 0.5s, transform 1.8s ease 0.5s;
+                    } @else {
+                        transition: opacity 1.8s ease 0.5s, transform 1.8s ease #{$delay + s};
+                    }
+                }
+            }
+        }
 	}
 	&__item {
 		padding-bottom: rem(30);
 	}
 	&__link {
+		transition: background 0.8s ease 0s;
+	
+		&:hover {
+			@extend %gradient-text-menu;
+			transition: background 0.8s ease 0s;
+			border-bottom: 3px solid skyblue;
+			border-image: $gradient-menu;
+			border-image-slice: 1;
+		}
 	}
 	&__social {
 		padding: rem(100) rem(120);
-		width: 38%;
+		width: 41%;
 		margin-left: auto;
 	}
 }

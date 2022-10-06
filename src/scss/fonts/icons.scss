@@ -32,6 +32,10 @@
 ._icon-Phone:before {
 	content: "\e904";
 	color: #fff;
+	// background: -webkit-gradient(linear, left top, left bottom, from(#0ECAF3), to(#9214D1));
+	// -webkit-background-clip: text;
+	// -webkit-text-fill-color: transparent;
+	// display: initial;
 }
 ._icon-Telegram:before {
 	content: "\e905";
@@ -63,9 +67,6 @@
 ._icon-WhatsApp:before {
 	content: "\e90b";
 	 color: #fff;
-	background: -webkit-gradient(linear, left top, left bottom, from(#0ECAF3), to(#9214D1));
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	display: initial;
-	font-size: rem(222);
+	
+	
 }                     
