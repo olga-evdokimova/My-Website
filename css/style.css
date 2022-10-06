@@ -222,7 +222,7 @@ body {
 }
 
 .no-webp .wrapper{
-  background-image: url(../img/Bacground.jpg.png); }
+  background-image: url(../img/Bacground.png); }
 
 .wrapper {
   background-repeat: no-repeat;
@@ -613,4 +613,4 @@ body {
   border-radius: 10px;
 }
 
-.webp .wrapper{ background-image: url(../img/Bacground.webp.webp); }
+.webp .wrapper{ background-image: url(../img/Bacground.webp); }
