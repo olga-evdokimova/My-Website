@@ -45,12 +45,12 @@ $gradient-social:linear-gradient(143.92deg, #0ecaf3 15.35%, #9214d1 92.84%);
 // Минимальная ширина страницы
 $minWidth: 320;
 // Ширина полотна (макета)
-$maxWidth: 1920;
+$maxWidth: 1440;
 // Ширина ограничивающего контейнера (0 = нет ограничения)
-$maxWidthContainer: 1634;
+$maxWidthContainer: 1234;
 // Общий отступ у контейнера
 // (30 = по 15px слева и справа, 0 = нет отступа)
-$containerPadding: 286;
+$containerPadding: 204;
 
 // Ширина срабатывания первого брейкпоинта
 $containerWidth: $maxWidthContainer + $containerPadding;
