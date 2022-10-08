@@ -1,40 +1,72 @@
 //====================================================================================================
 .first {
+    padding-top: rem(100);
     &__text {
-        font-size: rem(25);
+        // font-size: rem(18);
+        @include adaptiveValue("font-size",18 ,11 );
         font-weight: normal;
+        padding-top: rem(30);
     }
     &__buttons {
-        font-weight: 600;
-        font-size: rem(29);
+        display: flex;
+        align-items: center;
+        padding-top: rem(42);
+         margin-left: -37px;
+         a:last-child{
+          margin-left: 50px;
+         }
     }
 }
 .title {
-    font-size: rem(70);
+   // font-size: rem(50);
+   @include adaptiveValue("font-size",50 ,24 );
     font-weight: bold;
 }
-.button-decor {
+
+.button-a {
+    position: relative;
+    display: inline-flex;
+    font-weight: 600;
+    font-size: rem(18);
+   
 }
-.button-g{
+.button-a__text {
+    position: absolute;
+    white-space: nowrap;
+    padding: rem(24) rem(42);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #0b0b45;
+    border-radius: 7px;
+    transition: all 0.5s ease 0s;
+    &:hover {
+        background: $gradient-menu;
+        color: #08031f;
+        transition: all 0.5s ease 0s;
+    }
+}
+
+.button-b {
     display: inline-flex;
     position: relative;
     background: $gradient-menu;
-    padding: 3px;
+    padding: 2px;
     border-radius: 10px;
+    font-weight: 600;
+    font-size: rem(18);
 }
-
-
-.button-b-01 {
+.button-b__text {
     background: #0b0b45;
     color: white;
-    padding:rem(22) rem(62);
+    padding: rem(24) rem(44);
     border-radius: 10px;
+    transition: all 0.5s ease 0s;
+    &:hover {
+        background: $gradient-menu;
+        color: #08031f;
+        transition: all 0.5s ease 0s;
+    }
 }
-.button-b-02{
-     background: #0b0b45;
-    color: white;
-    padding:rem(15) rem(15);
-    border-radius: 10px; 
-   
-}
+
 //====================================================================================================
