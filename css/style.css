@@ -141,6 +141,10 @@
   border: 0px;
 }
 
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 *,
 *:before,
 *:after {
