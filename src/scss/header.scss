@@ -1,17 +1,31 @@
 //====================================================================================================
 .header {
 	padding: rem(50) 0;
+	@media (max-width: $tablet) {
+		padding: rem(30) 0;
+	}
 	&__wrap {
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 	}
 	&__logo {
 	}
 	&__social {
-		padding-top: rem(20);
+		
+		&.social {
+			@media (max-width: em(1200)) {
+				display: none;
+			}
+		}
 	}
 	&__menu {
-		padding-top: rem(20);
+		
+	}
+}
+.__container{
+	@media (max-width:$tablet){
+		padding: 0 15px;
 	}
 }
 .logo {
@@ -27,7 +41,7 @@
 		}
 	}
 	&__text {
-		padding-right: rem(20);
+		//padding-right: rem(20);
 		@include adaptiveValue("padding-left", 20, 10);
 		display: flex;
 		flex-direction: column;
@@ -36,7 +50,7 @@
 	&__title {
 		font-weight: bold;
 		//font-size: rem(43);
-		@include adaptiveValue("font-size", 40, 18);
+		@include adaptiveValue("font-size", 40, 14);
 		white-space: nowrap;
 	}
 	&__subtitle {
@@ -49,7 +63,7 @@
 .social {
 	display: flex;
 	&__item {
-		&:not(:last-child){
+		&:not(:last-child) {
 			@include adaptiveValue("padding-right", 50, 30);
 		}
 		a {
@@ -67,8 +81,7 @@
 }
 
 .menu {
-	&__icon {
-	}
+	
 	&__body {
 		position: fixed;
 		right: -100%;
@@ -88,35 +101,46 @@
 			transition: right 0.5s ease 0s;
 		}
 		& .logo {
-			padding: rem(60) 0 0 rem(20);
+			@include adaptiveValue("height", 100, 50);
+			margin: rem(50) 0;
 			width: 50%;
 			margin-left: auto;
 			@media (max-width: em(1140)) {
 				width: 100%;
 			}
+			@media (max-width:$tablet){
+				margin: rem(30) 0 ;
+			}
+			
 			&__img {
-				width: rem(60);
-				height: rem(60);
+				@include adaptiveValue("width", 60, 50);
+				margin:auto 0;
 			}
 			&__title {
-				font-size: rem(25);
+				@include adaptiveValue("font-size",25 ,14 );
 			}
 			&__subtitle {
 				font-size: rem(15);
+				@include adaptiveValue("font-size",15 , 11);
 			}
 			&__text {
-				padding-left: rem(30);
+				//padding-left: rem(30);
+				// @include adaptiveValue("padding-left",30 ,10 );
 			}
 		}
 	}
 	&__list {
 		font-size: rem(22);
 		font-weight: bold;
-		padding: rem(60) rem(60) 0 rem(60);
+		padding: rem(30) rem(60) 0 rem(60);
 		width: 50%;
 		margin-left: auto;
 		@media (max-width: em(1140)) {
 			width: 100%;
+		}
+		@media (max-width: $tablet) {
+			text-align: center;
+			padding: rem(15) rem(15) 0 rem(15);
 		}
 		//   li {
 		//     @for $var from 1 to 8 {
@@ -152,6 +176,12 @@
 		@media (max-width: em(1140)) {
 			width: 100%;
 		}
+		@media (max-width: $tablet) {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			padding:  rem(60) rem(15);
+		}
 	}
 }
 
@@ -166,6 +196,10 @@
 	margin-left: rem(20);
 	cursor: pointer;
 	z-index: 5;
+	@media (max-width:$tablet){
+		width: rem(40);
+	height: rem(28);
+	}
 	span,
 	&::before,
 	&::after {
@@ -173,7 +207,6 @@
 		transition: all 0.3s ease 0s;
 		right: 0;
 		position: absolute;
-
 		height: rem(5);
 		background-color: $mainColor;
 		border-radius: rem(90);
@@ -201,11 +234,15 @@
 		&::before {
 			top: calc(50% - rem(1));
 			transform: rotate(-45deg);
+			
 		}
 		&::after {
 			transform: rotate(45deg);
 			width: 100%;
-			bottom: rem(13);
+			bottom: rem(13.2);
+			@media (max-width:$tablet){
+				bottom: rem(10);
+			}
 		}
 	}
 }

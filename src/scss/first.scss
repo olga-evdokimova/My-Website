@@ -1,26 +1,47 @@
 //====================================================================================================
 .first {
-    padding-top: rem(100);
+    // padding-top: rem(100);
+    // @media (max-width:$tablet){
+    //       padding-top: rem(50);
+    // }
+    @include adaptiveValue("padding-top", 100, 30);
     &__text {
         // font-size: rem(18);
-        @include adaptiveValue("font-size",18 ,11 );
+        @include adaptiveValue("font-size", 21, 14);
         font-weight: normal;
         padding-top: rem(30);
+        width: 55%;
+        @media (max-width: $tablet) {
+            width: 70%;
+            margin: 0 auto;
+            text-align: center;
+        }
     }
     &__buttons {
         display: flex;
         align-items: center;
         padding-top: rem(42);
-         margin-left: -37px;
-         a:last-child{
-          margin-left: 50px;
-         }
+        margin-left: -37px;
+        a:last-child {
+            margin-left: rem(50);
+        }
+        @media (max-width: $tablet) {
+            flex-direction: column;
+            margin-left: 0;
+            a:last-child {
+                margin-left: 0px;
+                margin-top: rem(30);
+            }
+        }
     }
 }
 .title {
-   // font-size: rem(50);
-   @include adaptiveValue("font-size",50 ,24 );
+    // font-size: rem(50);
+    @include adaptiveValue("font-size", 50, 24);
     font-weight: bold;
+    @media (max-width: $tablet) {
+        text-align: center;
+    }
 }
 
 .button-a {
@@ -28,18 +49,40 @@
     display: inline-flex;
     font-weight: 600;
     font-size: rem(18);
-   
+    img {
+        @media (max-width: $mobileSmall) {
+            width: rem(310);
+        }
+    }
 }
 .button-a__text {
     position: absolute;
     white-space: nowrap;
-    padding: rem(24) rem(42);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #0b0b45;
-    border-radius: 7px;
+    width: 300px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 45px;
+    border-radius: 9px;
     transition: all 0.5s ease 0s;
+    &::before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        bottom: -2px;
+        left: -2px;
+        right: -2px;
+        transition: all 0.5s ease 0s;
+        border-radius: 9px;
+        z-index: -10;
+    }
+    @media (max-width: $mobileSmall) {
+        width: 236px;
+        height: 53px;
+      border-radius: 6px;
+        margin: 37px;
+    }
     &:hover {
         background: $gradient-menu;
         color: #08031f;
@@ -51,7 +94,7 @@
     display: inline-flex;
     position: relative;
     background: $gradient-menu;
-    padding: 2px;
+    padding: 1px;
     border-radius: 10px;
     font-weight: 600;
     font-size: rem(18);
@@ -59,13 +102,22 @@
 .button-b__text {
     background: #0b0b45;
     color: white;
-    padding: rem(24) rem(44);
     border-radius: 10px;
     transition: all 0.5s ease 0s;
+     width: 250px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (max-width:$mobileSmall){
+           width: 178px;
+        height: 53px; 
+    }
     &:hover {
         background: $gradient-menu;
         color: #08031f;
         transition: all 0.5s ease 0s;
+        
     }
 }
 
