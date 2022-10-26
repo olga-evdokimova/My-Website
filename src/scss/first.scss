@@ -20,7 +20,8 @@
     &__buttons {
         display: flex;
         align-items: center;
-        padding: rem(42) 0 rem(150);
+        padding-top: rem(42);
+        @include adaptiveValue("padding-bottom", 150, 70);
         margin-left: -37px;
         a:last-child {
             margin-left: rem(50);
@@ -80,7 +81,7 @@
     @media (max-width: $mobileSmall) {
         width: 236px;
         height: 53px;
-      border-radius: 6px;
+        border-radius: 6px;
         margin: 37px;
     }
     &:hover {
@@ -104,20 +105,19 @@
     color: white;
     border-radius: 10px;
     transition: all 0.5s ease 0s;
-     width: 250px;
+    width: 250px;
     height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
-    @media (max-width:$mobileSmall){
-           width: 178px;
-        height: 53px; 
+    @media (max-width: $mobileSmall) {
+        width: 178px;
+        height: 53px;
     }
     &:hover {
         background: $gradient-menu;
         color: #08031f;
         transition: all 0.5s ease 0s;
-        
     }
 }
 
