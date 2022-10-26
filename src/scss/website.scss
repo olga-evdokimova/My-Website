@@ -12,7 +12,7 @@
     left: 50%;
     top: 0;
     z-index: 10;
-    width: 8px;
+    width: 6px;
     height: 100%;
     background: linear-gradient(92.52deg, #0ecaf3 1.08%, #9214d1 99.17%, #9214d1 99.17%);
     &::after {
@@ -22,6 +22,7 @@
         top: 50%;
         width: 20px;
         height: 50px;
+        border-radius:10px;
         background: linear-gradient(92.52deg, #0ecaf3 1.08%, #9214d1 99.17%, #9214d1 99.17%);
         transform: translate(-50%, -50%);
     }
@@ -29,38 +30,7 @@
 
 .website {
     &__title {
-        @include adaptiveValue("font-size", 50, 24);
-        padding-bottom: rem(55);
         text-align: end;
-        position: relative;
-        & > span {
-            display: inline-block;
-            margin: 0 rem(50);
-        }
-        & > span:before,
-        & > span:after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            border-top: 1px solid $mainColor;
-            @include adaptiveValue(" margin-top", 26, 18);
-        }
-        & > span:before {
-            margin-left: -104%;
-        }
-        & > span:after {
-            margin-left: 4%;
-        }
-        @media (max-width: $mobile) {
-            text-align: center;
-            span{
-                margin: 0;
-            }
-            span:before,
-            span:after {
-                display: none;
-            }
-        }
     }
     &__inner {
            @include adaptiveValue("padding-bottom", 150, 70);
