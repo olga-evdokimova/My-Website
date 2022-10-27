@@ -6,7 +6,6 @@
     // }
     @include adaptiveValue("padding-top", 100, 30);
     &__text {
-        // font-size: rem(18);
         @include adaptiveValue("font-size", 21, 14);
         font-weight: normal;
         padding-top: rem(30);
@@ -22,7 +21,7 @@
         align-items: center;
         padding-top: rem(42);
         @include adaptiveValue("padding-bottom", 150, 70);
-        margin-left: -37px;
+        // margin-left: -37px;
         a:last-child {
             margin-left: rem(50);
         }
@@ -47,15 +46,48 @@
 
 .button-a {
     position: relative;
-    display: inline-flex;
+    display: flex;
     font-weight: 600;
     font-size: rem(18);
-    img {
-        @media (max-width: $mobileSmall) {
-            width: rem(310);
-        }
+    width: 300px;
+    height: 70px;
+    border-radius: 10px;
+    @media (max-width: $mobileSmall) {
+        width: 236px;
+        height: 53px;
+    }
+    &:hover::before,
+    &:hover::after {
+        content: "";
+        position: absolute;
+        border: 1px solid #29aee3;
+        left: -70px;
+        right: -70px;
+        top: -30px;
+        bottom: -30px;
+        border-radius: 10px;
+        animation: pulse 1.8s linear infinite;
+        opacity: 0;
+        z-index: -1;
+    }
+    &:hover::after {
+        animation-delay: 0.5s;
     }
 }
+@keyframes pulse {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+    }
+}
+
 .button-a__text {
     position: absolute;
     white-space: nowrap;
@@ -64,25 +96,27 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 45px;
-    border-radius: 9px;
+    // margin: 45px;
+    border-radius: 10px;
     transition: all 0.5s ease 0s;
+    background: #0b0b45;
+
     &::before {
         content: "";
+        background: $gradient-menu;
+        padding: 1px;
         position: absolute;
         top: -2px;
         bottom: -2px;
         left: -2px;
         right: -2px;
         transition: all 0.5s ease 0s;
-        border-radius: 9px;
-        z-index: -10;
+        border-radius: 10px;
+        z-index: -1;
     }
     @media (max-width: $mobileSmall) {
         width: 236px;
         height: 53px;
-        border-radius: 6px;
-        margin: 37px;
     }
     &:hover {
         background: $gradient-menu;
