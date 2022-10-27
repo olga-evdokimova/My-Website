@@ -1,5 +1,6 @@
 .swiper {
 	overflow: hidden;
+	width: calc(100vw - (100vw - 1234px) / 2);
 }
 .swiper-wrapper {
 	width: 100%;
@@ -20,7 +21,7 @@
 }
 .swiper-initialized {
 	.swiper-slide {
-		flex-shrink: 0;
+		// flex-shrink: 0;
 		// transition-property: transform;
 	}
 }

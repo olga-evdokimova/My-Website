@@ -35,8 +35,8 @@ function initSliders() {
 			modules: [Navigation],
 			observer: true,
 			observeParents: true,
-			slidesPerView: 3.2,
-			spaceBetween: 0,
+			slidesPerView: 3,
+			spaceBetween: 40,
 			autoHeight: true,
 			speed: 800,
 
@@ -78,27 +78,27 @@ function initSliders() {
 			},
 
 			// Брейкпоинты
-			/*
+			
 			breakpoints: {
 				320: {
 					slidesPerView: 1,
-					spaceBetween: 0,
+					spaceBetween: 30,
 					autoHeight: true,
 				},
 				768: {
-					slidesPerView: 2,
-					spaceBetween: 20,
+					slidesPerView: 1,
+					spaceBetween: 30,
 				},
 				992: {
 					slidesPerView: 3,
-					spaceBetween: 20,
+					spaceBetween: 40,
 				},
 				1268: {
-					slidesPerView: 4,
-					spaceBetween: 30,
+					slidesPerView:3.5,
+					spaceBetween: 40,
 				},
 			},
-			*/
+			
 			// События
 			on: {
 

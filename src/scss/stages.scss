@@ -2,7 +2,7 @@
     &__title {
     }
     &__slider {
-        padding-bottom: rem(100);
+           @include adaptiveValue("padding-bottom", 150, 70);
     }
     &__inner {
     }
@@ -10,7 +10,9 @@
         background: $gradient-menu;
         padding: 2px;
         border-radius: 10px;
-        width: 350px;
+        // width: 350px;
+        @include adaptiveValue("width", 350, 200);
+           @include adaptiveValue("height", 600, 400);
     }
     &__item {
     }
@@ -19,39 +21,45 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 346px;
-    //height: 600px;
+     @include adaptiveValue("width", 346, 196);
+     @include adaptiveValue("height", 596, 396);
     background: #0b0b45;
     border-radius: 10px;
     padding: rem(50) rem(15);
     text-align: center;
     position: relative;
-    z-index: 1;
+
     &::before {
         content: "1";
-        font-size: rem(400);
+        @include adaptiveValue("font-size", 400, 200);
         font-weight: bold;
-        line-height: 488px;
+        @include adaptiveValue("line-height", 600, 400);
         color: rgba(255, 255, 255, 0.1);
         position: absolute;
-        top: 0;
-        right: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         width: 100%;
         height: 100%;
         border-radius: 10px;
+        
     }
 
     &__title {
         @include adaptiveValue("font-size", 30, 14);
         font-weight: bold;
-        padding-bottom: rem(50);
+          z-index: 1;
+           @include adaptiveValue("height", 140, 70);
     }
     &__text {
         @include adaptiveValue("font-size", 18, 10);
         padding-bottom: rem(25);
+          z-index: 1;
+          margin-bottom: auto;
     }
     &__btn {
-        @include adaptiveValue("width", 220, 130);
+        z-index: 1;
+       // @include adaptiveValue("width", 220, 130);
         white-space: nowrap;
         margin: 0 auto;
         @include adaptiveValue("font-size", 30, 18);
