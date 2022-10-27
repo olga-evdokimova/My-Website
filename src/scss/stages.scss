@@ -1,8 +1,29 @@
 .stages {
+    position: relative;
+    &__bg-ellipse-01,
+    &__bg-ellipse-02 {
+        max-width: 100%;
+        height: 800px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        pointer-events: none;
+    }
+    &__bg-ellipse-01 {
+        // top: 55px;
+        // left: 110px;
+          @include adaptiveValue("top", 55, 16);
+            @include adaptiveValue("left", 110, 30);
+    }
+    &__bg-ellipse-02 {
+        top: 0;
+        left: 600px;
+    }
     &__title {
     }
     &__slider {
-           @include adaptiveValue("padding-bottom", 150, 70);
+        @include adaptiveValue("padding-bottom", 150, 70);
     }
     &__inner {
     }
@@ -12,7 +33,7 @@
         border-radius: 10px;
         // width: 350px;
         @include adaptiveValue("width", 350, 200);
-           @include adaptiveValue("height", 600, 400);
+        @include adaptiveValue("height", 600, 400);
     }
     &__item {
     }
@@ -21,45 +42,50 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-     @include adaptiveValue("width", 346, 196);
-     @include adaptiveValue("height", 596, 396);
-    background: #0b0b45;
+    @include adaptiveValue("width", 346, 196);
+    @include adaptiveValue("height", 596, 396);
     border-radius: 10px;
     padding: rem(50) rem(15);
     text-align: center;
     position: relative;
-
-    &::before {
-        content: "1";
-        @include adaptiveValue("font-size", 400, 200);
-        font-weight: bold;
-        @include adaptiveValue("line-height", 600, 400);
-        color: rgba(255, 255, 255, 0.1);
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100%;
+    img {
+        max-width: 100%;
         height: 100%;
-        border-radius: 10px;
-        
+        position: absolute;
+        top: 0;
+        left: 0;
     }
+    // &::before {
+    //     content: "1";
+    //     @include adaptiveValue("font-size", 400, 200);
+    //     font-weight: bold;
+    //     @include adaptiveValue("line-height", 600, 400);
+    //     color: rgba(255, 255, 255, 0.1);
+    //     position: absolute;
+    //     top: 50%;
+    //     left: 50%;
+    //     transform: translate(-50%, -50%);
+    //     width: 100%;
+    //     height: 100%;
+    //     border-radius: 10px;
+
+    // }
 
     &__title {
         @include adaptiveValue("font-size", 30, 14);
         font-weight: bold;
-          z-index: 1;
-           @include adaptiveValue("height", 140, 70);
+        @include adaptiveValue("height", 140, 70);
+        z-index: 1;
     }
     &__text {
         @include adaptiveValue("font-size", 18, 10);
         padding-bottom: rem(25);
-          z-index: 1;
-          margin-bottom: auto;
+        margin-bottom: auto;
+        z-index: 1;
     }
     &__btn {
         z-index: 1;
-       // @include adaptiveValue("width", 220, 130);
+        // @include adaptiveValue("width", 220, 130);
         white-space: nowrap;
         margin: 0 auto;
         @include adaptiveValue("font-size", 30, 18);
