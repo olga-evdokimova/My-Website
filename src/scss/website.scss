@@ -22,7 +22,7 @@
         top: 50%;
         width: 20px;
         height: 50px;
-        border-radius:10px;
+        border-radius: 10px;
         background: linear-gradient(92.52deg, #0ecaf3 1.08%, #9214d1 99.17%, #9214d1 99.17%);
         transform: translate(-50%, -50%);
     }
@@ -33,7 +33,7 @@
         text-align: end;
     }
     &__inner {
-           @include adaptiveValue("padding-bottom", 150, 70);
+        @include adaptiveValue("padding-bottom", 150, 70);
     }
     &__slider {
         // float: left;
@@ -41,6 +41,7 @@
         position: relative;
         overflow: hidden;
         border: 3px solid #0b0b45;
+        border-radius: 10px;
         width: 100%;
         @include adaptiveValue("height", 600, 300);
         img {
@@ -67,10 +68,12 @@
     transition: all 0.8s ease 0s;
     @extend %gradient-text-menu;
     border-bottom: 1px solid #0b0b45;
-    &:hover {
-        transition: all 0.8s ease 0s;
-        border-bottom: 1px solid skyblue;
-        border-image: $gradient-menu;
-        border-image-slice: 1;
+    @media (any-hover: hover) and (any-pointer: fine) {
+        &:hover {
+            transition: all 0.8s ease 0s;
+            border-bottom: 1px solid skyblue;
+            border-image: $gradient-menu;
+            border-image-slice: 1;
+        }
     }
 }
