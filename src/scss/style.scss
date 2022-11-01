@@ -23,8 +23,8 @@ $color1: #0ecaf3;
 $color2: #9214d1;
 $gradient1: linear-gradient(136.33deg, #08031f 0%, #0b0b45 102.43%, #0b0b45 102.43%);
 $gradient2: linear-gradient(180deg, #0ecaf3 0%, #9214d1 100%);
-$gradient-menu:linear-gradient(92.52deg, #0ecaf3 1.08%, #9214d1 99.17%, #9214d1 99.17%);
-$gradient-social:linear-gradient(143.92deg, #0ecaf3 15.35%, #9214d1 92.84%);
+$gradient-menu: linear-gradient(92.52deg, #0ecaf3 1.08%, #9214d1 99.17%, #9214d1 99.17%);
+$gradient-social: linear-gradient(143.92deg, #0ecaf3 15.35%, #9214d1 92.84%);
 
 %gradient-text {
 	background: linear-gradient(143.92deg, #0ecaf3 15.35%, #9214d1 92.84%);
@@ -70,7 +70,7 @@ $responsiveType: 1;
 @import "base/null";
 
 body {
-	 background: $gradient1;
+	background: $gradient1;
 	// Скролл заблокирован
 	.lock & {
 		overflow: hidden;
@@ -82,8 +82,17 @@ body {
 }
 // Оболочка ============================================================================================================================================================================================================================================================================================================================================================================================================================================
 .wrapper {
-	background-repeat: no-repeat;
-	background-size: cover;
+	&__img-bg {
+		position: relative;
+		width: 100%;
+		img {
+			position: absolute;
+			max-width: 100%;
+			top: 0;
+			right: 0;
+			z-index: -1;
+		}
+	}
 	min-height: 100%;
 	display: flex;
 	flex-direction: column;
@@ -159,3 +168,4 @@ body {
 @import "first";
 @import "website";
 @import "stages";
+@import "calculate";

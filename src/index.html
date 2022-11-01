@@ -5,12 +5,14 @@
 })
 
 <body>
-	<div class="wrapper" style="background-image:url('../img/Bacground.png') ;">
+	<div class="wrapper" >
+		<div class="wrapper__img-bg"><img src="@img/Bacground.png" alt=""></div>
 		@@include('html/_header.htm',{})
 		<main class="page">
 			@@include('html/_first.htm',{})
 			@@include('html/_website.htm',{})
 			@@include('html/_stages.htm',{})
+				@@include('html/_calculate.htm',{})
 		</main>
 		@@include('html/_footer.htm',{})
 	</div>

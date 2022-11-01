@@ -1,0 +1,76 @@
+//   .accordion{
+//     height: 400px;
+//     width: 800px;
+//     padding-bottom: 100px;
+//   }
+  
+//   .tab input, .tab-content { display: none; }
+//    .tab {
+//     font: 0.8rem/1.2 Arial, sans-serif; /* Параметры шрифта */
+//     border: 1px solid #e9eaec; /* Параметры рамки */
+//     border-radius: 3px; /* Скругляем уголки */
+//     color: #848994; /* Цвет текста */
+//     margin-bottom: 10px; /* Расстояние между пунктами */
+//    }
+//    .tab-title {
+//     padding: 10px; /* Поля вокруг текста */
+//     display: block; /* Блочный элемент */
+//     text-transform: uppercase; /* Все буквы заглавные */
+//     font-weight: bold; /* Жирное начертание */
+//     cursor: pointer; /* Вид курсора */
+//    }
+//    .tab-title::after {
+//     content: '+'; /* Выводим плюс */
+//     float: right; /* Размещаем по правому краю */
+//    }
+//    .tab-content {
+//     padding: 10px 20px; /* Поля вокруг текста */
+//    }
+//    .tab :checked + .tab-title {
+//     // background-color: #50a2de; /* Цвет фона */
+//     border-radius: 3px 3px 0 0; /* Скругляем уголки */
+//     // color: #fff; /* Цвет текста */
+//    }
+//    .tab :checked + .tab-title::after {
+//     content: '−'; /* Выводим минус */
+//    }
+//    .tab :checked ~ .tab-content {
+//     display: block; /* Показываем содержимое */
+//    }
+
+.widget {
+    // & + .widget {
+    //     //после первого виджета, каждому следующему виджету будет присвоен отступ сверху
+    //     margin-top: 30px;
+    // }
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 1.16;
+        padding-bottom: 18px;
+        cursor: pointer;
+        color: $mainColor;
+       // transition: all 0.8s ease 0s;
+        &::after {
+            content: "";
+            width: 42px;
+            height: 23px;
+            display: inline-block;
+            vertical-align: middle;
+            background-image: url("@img/Arrow.png");
+           transition: all 0.3s ease 0s;
+        }
+    }
+    .widget__title--active::after{
+        //поворачивает стрелочку при клике
+        // transform: rotate(180deg);
+       transform: scale(1, -1);
+    }
+   
+    .widget__body--hidden{
+        //скрывает тело виджета при нажатии 
+        display: none;
+    }
+}
