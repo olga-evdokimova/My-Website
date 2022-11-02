@@ -12,7 +12,6 @@
 	&__logo {
 	}
 	&__social {
-		
 		&.social {
 			@media (max-width: em(1200)) {
 				display: none;
@@ -20,11 +19,10 @@
 		}
 	}
 	&__menu {
-		
 	}
 }
-.__container{
-	@media (max-width:$tablet){
+.__container {
+	@media (max-width: $tablet) {
 		padding: 0 15px;
 	}
 }
@@ -67,7 +65,6 @@
 			@include adaptiveValue("padding-right", 50, 30);
 		}
 		a {
-			//font-size: rem(40);
 			@include adaptiveValue("font-size", 40, 25);
 			transition: background 0.8s ease 0s;
 			&:hover {
@@ -78,10 +75,13 @@
 			}
 		}
 	}
+	svg{
+			//@include adaptiveValue("width", 48, 32);
+			@include adaptiveValue("height", 45, 27);
+	}
 }
 
 .menu {
-	
 	&__body {
 		position: fixed;
 		right: -100%;
@@ -109,20 +109,20 @@
 			@media (max-width: em(1140)) {
 				width: 100%;
 			}
-			@media (max-width:$tablet){
-				margin: rem(30) 0 ;
+			@media (max-width: $tablet) {
+				margin: rem(30) 0;
 			}
-			
+
 			&__img {
 				@include adaptiveValue("width", 60, 50);
-				margin:auto 0;
+				margin: auto 0;
 			}
 			&__title {
-				@include adaptiveValue("font-size",25 ,14 );
+				@include adaptiveValue("font-size", 25, 14);
 			}
 			&__subtitle {
 				font-size: rem(15);
-				@include adaptiveValue("font-size",15 , 11);
+				@include adaptiveValue("font-size", 15, 11);
 			}
 			&__text {
 				//padding-left: rem(30);
@@ -181,7 +181,7 @@
 			width: 100%;
 			display: flex;
 			justify-content: center;
-			padding:  rem(60) rem(15);
+			padding: rem(60) rem(15);
 		}
 	}
 }
@@ -197,9 +197,9 @@
 	margin-left: rem(20);
 	cursor: pointer;
 	z-index: 5;
-	@media (max-width:$tablet){
+	@media (max-width: $tablet) {
 		width: rem(40);
-	height: rem(28);
+		height: rem(28);
 	}
 	span,
 	&::before,
@@ -235,13 +235,12 @@
 		&::before {
 			top: calc(50% - rem(1));
 			transform: rotate(-45deg);
-			
 		}
 		&::after {
 			transform: rotate(45deg);
 			width: 100%;
 			bottom: rem(13.2);
-			@media (max-width:$tablet){
+			@media (max-width: $tablet) {
 				bottom: rem(10);
 			}
 		}
