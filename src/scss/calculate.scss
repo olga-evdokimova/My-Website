@@ -1,76 +1,168 @@
-//   .accordion{
-//     height: 400px;
-//     width: 800px;
-//     padding-bottom: 100px;
-//   }
-  
-//   .tab input, .tab-content { display: none; }
-//    .tab {
-//     font: 0.8rem/1.2 Arial, sans-serif; /* Параметры шрифта */
-//     border: 1px solid #e9eaec; /* Параметры рамки */
-//     border-radius: 3px; /* Скругляем уголки */
-//     color: #848994; /* Цвет текста */
-//     margin-bottom: 10px; /* Расстояние между пунктами */
-//    }
-//    .tab-title {
-//     padding: 10px; /* Поля вокруг текста */
-//     display: block; /* Блочный элемент */
-//     text-transform: uppercase; /* Все буквы заглавные */
-//     font-weight: bold; /* Жирное начертание */
-//     cursor: pointer; /* Вид курсора */
-//    }
-//    .tab-title::after {
-//     content: '+'; /* Выводим плюс */
-//     float: right; /* Размещаем по правому краю */
-//    }
-//    .tab-content {
-//     padding: 10px 20px; /* Поля вокруг текста */
-//    }
-//    .tab :checked + .tab-title {
-//     // background-color: #50a2de; /* Цвет фона */
-//     border-radius: 3px 3px 0 0; /* Скругляем уголки */
-//     // color: #fff; /* Цвет текста */
-//    }
-//    .tab :checked + .tab-title::after {
-//     content: '−'; /* Выводим минус */
-//    }
-//    .tab :checked ~ .tab-content {
-//     display: block; /* Показываем содержимое */
-//    }
+.calculate {
+    padding-bottom: 100px;
+    &__text {
+        text-align: end;
+    }
+    &__slider {
+    }
+    &__wrapper {
+        height: 400px !important;
+    }
+    &__slide {
+        display: flex;
+        position: relative;
+        background-color: #0ec9f320;
+        width: 100%;
+        height: 100%;
+    }
+}
+.form {
+    width: 600px;
+    // padding-bottom: rem(60);
 
-.widget {
-    // & + .widget {
-    //     //после первого виджета, каждому следующему виджету будет присвоен отступ сверху
-    //     margin-top: 30px;
-    // }
+    &__inner {
+        background: $gradient-menu;
+        padding: 2px;
+        border-radius: 10px;
+    }
+    &__inner-bg {
+        background: #0b0b45;
+        border-radius: 10px;
+    }
     &__title {
+        font-size: rem(30);
+        font-weight: 600;
+        padding-bottom: rem(30);
+        &::before {
+            content: "1.";
+            padding: 0 10px;
+        }
+    }
+    &__text {
+        width: 600px;
+        height: 80px;
         display: flex;
         justify-content: space-between;
-        font-weight: bold;
-        font-size: 18px;
-        line-height: 1.16;
-        padding-bottom: 18px;
+        font-size: rem(18);
         cursor: pointer;
-        color: $mainColor;
-       // transition: all 0.8s ease 0s;
+        color: rgba(255, 255, 255, 0.3);
+        padding: rem(29) rem(30);
+        resize: none;
+        outline: none;
+        border: none;
         &::after {
             content: "";
             width: 42px;
             height: 23px;
-            display: inline-block;
-            vertical-align: middle;
             background-image: url("@img/Arrow.png");
-           transition: all 0.3s ease 0s;
+            transition: all 0.3s ease 0s;
         }
     }
-    .widget__title--active::after{
+    .form__text--active::after {
         //поворачивает стрелочку при клике
         // transform: rotate(180deg);
-       transform: scale(1, -1);
+        transform: scale(1, -1);
     }
-   
-    .widget__body--hidden{
-        //скрывает тело виджета при нажатии 
+    &__body {
+        display: flex;
+        flex-direction: column;
+        color: $mainColor;
+        padding: 0 rem(30) rem(30) rem(30);
+    }
+}
+.form-01 {
+    position: absolute;
+    z-index: 100;
+}
+.form-02 {
+    position: absolute;
+    top: 210px;
+
+    .form__text {
+        color: $mainColor;
+        &::after {
+            display: none;
+        }
+        &::-webkit-scrollbar {
+            width: 10px;
+            border-radius: 10px;
+            background-color: $color2;
+        }
+        &::-webkit-scrollbar-thumb {
+            height: 5px;
+            background: linear-gradient(143.92deg, #0ecaf3 15.35%, #9214d1 92.84%);
+            border-radius: 10px;
+        }
+    }
+}
+textarea {
+    background-color: transparent;
+}
+.hidden {
+    display: none;
+}
+.radio {
+    &:not(:last-child) {
+        padding-bottom: rem(20);
+    }
+    &__real {
         display: none;
+    }
+
+    &__title {
+        display: inline-block;
+        font-size: rem(18);
+        cursor: pointer;
+        transition: background 0.8s ease 0s;
+        &:hover {
+            @extend %gradient-text-menu;
+            border-image: $gradient-menu;
+            border-image-slice: 1;
+            transition: background 0.8s ease 0s;
+        }
+    }
+}
+.progress-circle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 354px;
+    height: 354px;
+    border-radius: 50%;
+    outline: 1px solid #0ecaf3;
+    outline-offset: -1px;
+    background: rgba(255, 255, 255, 0.1);
+    span {
+        font-size: rem(70);
+        font-weight: 600;
+        color: $mainColor;
+    }
+}
+.progress-circle::after,
+.number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.progress-circle::after {
+    content: "";
+    width: 304px;
+    height: 304px;
+    border-radius: inherit;
+    outline: inherit;
+}
+.circle {
+    stroke-dasharray: 410;
+    stroke-dashoffset: 410;
+    transform: rotate(-90deg);
+    animation: bar-fill 8s linear forwards;
+    animation-iteration-count: infinite;
+    width: 354px;
+    height: 354px;
+}
+@keyframes bar-fill {
+    100% {
+        stroke-dashoffset: 0;
     }
 }

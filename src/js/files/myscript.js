@@ -96,17 +96,10 @@ body.addEventListener('touchmove', (e) => {
     pauseEvents(e);
 });
 //===========================================
-const widgets = document.querySelectorAll('.widget');
-//находим все виджеты на странице
-widgets.forEach(function (widget) {
+const formText = document.querySelector('.form__text');
+const formBody = document.querySelector('.form__body');
 
-    //слушаем клик внутри виджета
-    widget.addEventListener('click', function (e) {
-
-        //если клик по заголовку - тогда скрываем/показываем тело виджета добавляя классы
-        if (e.target.classList.contains('widget__title')) {
-            e.target.classList.toggle('widget__title--active');
-            e.target.nextElementSibling.classList.toggle('widget__body--hidden');
-        }
+    formText.addEventListener("click", function () {
+        formText.classList.toggle('form__text--active');
+        formBody.classList.toggle('hidden');
     });
-});
